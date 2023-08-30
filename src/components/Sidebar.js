@@ -20,7 +20,7 @@ import { AiFillHome } from "react-icons/ai";
 export const Sidebar = () => {
   return (
     <>
-      <div className="w-56 pt-2 px-3 ">
+      <div className="w-56 pt-2 px-3 bg-green-200">
         <section className="w-full border-b border-gray-200">
           <p className="flex w-full gap-4 p-2 rounded-md cursor-pointer hover:bg-gray-100">
             <AiFillHome className="text-xl" />

@@ -4,7 +4,16 @@ import { AiOutlineBell } from "react-icons/ai";
 import { BiVideoPlus } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
+import { YOUTUBE_SEARCH_API } from "../constants/Constants";
 export const Navbar = () => {
+  ///////Search
+  const searchApiHandler = async () => {
+    const data = await fetch(YOUTUBE_SEARCH_API);
+    const json = await data.json();
+    console.log(json);
+  };
+  searchApiHandler();
+
   return (
     <>
       <div className="flex items-center justify-between  px-3 shadow-lg ">
