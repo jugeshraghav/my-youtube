@@ -18,7 +18,7 @@ export const ButtonList = () => {
   ];
   return (
     <>
-      <div className="flex gap-2 ">
+      <div className="flex gap-2 flex-wrap">
         {ButtonDataArr.map((content, index) => (
           <button
             key={index}

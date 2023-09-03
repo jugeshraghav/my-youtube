@@ -15,7 +15,7 @@ export const VideoContainer = () => {
   }, []);
   return (
     <>
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-wrap gap-5 justify-evenly">
         {mostPopularVideos.map((videoDetails) => (
           <VideoCard key={videoDetails.id} videoDetails={videoDetails} />
         ))}

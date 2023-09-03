@@ -8,7 +8,7 @@ export const AppLayout = () => {
       <div className="fixed top-0 left-0 z-10 w-full bg-red-200">
         <Navbar />
       </div>
-      <div className="flex gap-4 mt-16 z-0 w-screen bg-blue-300">
+      <div className="flex gap-4 mt-16 z-0 w-screen h-screen bg-blue-300">
         <Sidebar />
         <Outlet />
       </div>

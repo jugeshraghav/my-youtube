@@ -1,13 +1,18 @@
-export const VideoCard = ({ videoDetails: { snippet, statistics } }) => {
-  console.log(snippet);
-  console.log(statistics);
+import { NavLink, useNavigate } from "react-router-dom";
+
+export const VideoCard = ({ videoDetails }) => {
+  const { snippet, statistics } = videoDetails;
+  const navigate = useNavigate();
   return (
     <>
-      <div className="w-80 flex flex-col gap-3">
+      <div
+        className="w-80 flex flex-col gap-3 cursor-pointer"
+        onClick={() => navigate(`/watch?v=${videoDetails.id}`)}
+      >
         <img
           src={snippet.thumbnails.medium.url}
           alt="thumbnail"
-          className="rounded-lg"
+          className="rounded-lg hover:rounded-none"
         />
         <div>
           <div className="flex gap-1">

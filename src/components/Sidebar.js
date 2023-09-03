@@ -17,7 +17,14 @@ import { BiHistory } from "react-icons/bi";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { AiFillLike } from "react-icons/ai";
 import { AiFillHome } from "react-icons/ai";
+import { useSelector } from "react-redux";
 export const Sidebar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+
+  ////Early Return////
+  if (!isMenuOpen) {
+    return null;
+  }
   return (
     <>
       <div className="w-56 pt-2 px-3 bg-green-200">
