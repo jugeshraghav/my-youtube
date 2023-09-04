@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/appSlice";
+import { CommentsContainer } from "../components/CommentsContainer";
 
 export const Watch = () => {
   const [searchParams] = useSearchParams();
@@ -27,7 +28,10 @@ export const Watch = () => {
         ></iframe>
         {/* <SuggestedVideosContainer/> */}
       </div>
-      <div>{/* <CommentsContainer /> */}</div>
+      <div>
+        {" "}
+        <CommentsContainer />
+      </div>
     </>
   );
 };

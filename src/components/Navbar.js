@@ -17,10 +17,10 @@ export const Navbar = () => {
 
   ///////Search///////
   const searchApiHandler = async () => {
-    console.log("hello");
     const data = await fetch(YOUTUBE_SEARCH_SUGGESTIONS_API + searchText);
     const json = await data.json();
     setSuggestionsFromApi(json[1]);
+    dispatch(addToSearchCache({ [searchText]: json[1] }));
   };
   const dispatch = useDispatch();
   const handleSidebarToggle = () => {
@@ -33,7 +33,6 @@ export const Navbar = () => {
         setSuggestionsFromApi(searchCache[searchText]);
       } else {
         searchApiHandler();
-        dispatch(addToSearchCache({ [searchText]: suggestionsFromApi }));
       }
     }, 200);
     return () => clearTimeout(timer);
