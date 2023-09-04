@@ -5,3 +5,16 @@ export const YOUTUBE_SEARCH_SUGGESTIONS_API =
 
 //   http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&client=firefox&q=Query
 // https://corsproxy.io/?
+
+export const commentsFetcher = async (videoId) => {
+  try {
+    const res =
+      await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=30&videoId=${videoId}&key=${MY_API_KEY}
+`);
+    const data = await res.json();
+    console.log(data);
+    return data?.items;
+  } catch (err) {
+    console.log(err);
+  }
+};
