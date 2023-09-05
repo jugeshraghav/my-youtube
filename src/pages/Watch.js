@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/appSlice";
 import { CommentsContainer } from "../components/CommentsContainer";
-import { commentsFetcher } from "../constants/Constants";
+import { LIVE_CHAT_API, commentsFetcher } from "../constants/Constants";
 import { SuggestedVideosContainer } from "../components/SuggestedVideosContainer";
 
 export const Watch = () => {
@@ -20,6 +20,13 @@ export const Watch = () => {
     commentsArray();
   }, []);
 
+  const getLiveChatData = async () => {
+    const data = await fetch(LIVE_CHAT_API);
+    const json = await data.json();
+    console.log(json);
+  };
+
+  getLiveChatData();
   return (
     <>
       <div className="w-full h-full bg-purple-500 flex gap-4 ">

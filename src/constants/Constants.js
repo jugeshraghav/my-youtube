@@ -18,3 +18,6 @@ export const commentsFetcher = async (videoId) => {
     console.log(err);
   }
 };
+
+export const LIVE_CHAT_API = `https://youtube.googleapis.com/youtube/v3/liveChat/messages?key=" 
+  ${MY_API_KEY}`;

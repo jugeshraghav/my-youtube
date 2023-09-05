@@ -9,7 +9,6 @@ export const VideoContainer = () => {
     const json = await data.json();
     setMostPopularVideos(json.items);
   };
-  console.log(mostPopularVideos);
   useEffect(() => {
     apiCall(YOUTUBE_MOST_POPULAR_VIDEOS_API);
   }, []);
